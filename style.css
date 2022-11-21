@@ -1,0 +1,224 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  color: #112575;
+  background: linear-gradient(#dbb0f7, #a9f3f6);
+  min-height: 100vh;
+}
+#navbar {
+  background-color: #7633fa;
+}
+#navbar-brand {
+  font-family: pacifico;
+  font-size: 1.5rem;
+}
+#offcanvasDarkNavbar {
+  background-color: #7633fa;
+}
+.main {
+  margin-top: 5em;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.editor-container {
+  width: 850px;
+  padding: 30px 35px 35px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+}
+.editor-container:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+.editor-container.disable .editor-panel,
+.editor-container.disable .filter-controls .reset-filter,
+.editor-container.disable .filter-controls .save-img {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.editor-container h2 {
+  margin-top: -8px;
+  font-size: 22px;
+  font-weight: 500;
+}
+.editor-container .wrapper {
+  display: flex;
+  margin: 20px 0;
+  min-height: 335px;
+}
+.wrapper .editor-panel {
+  padding: 15px 20px;
+  width: 280px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.editor-panel .title {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.editor-panel .options,
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.editor-panel button {
+  outline: none;
+  height: 40px;
+  font-size: 14px;
+  color: #2f3336;
+  background: #fff;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  border: 1px solid #aaa;
+  transition: 0.15s;
+}
+.editor-panel .filter button {
+  width: 49%;
+}
+.editor-panel button:hover {
+  color: #7633fa;
+  border-color: #7633fa;
+  transition: 0.15s;
+  box-shadow: 0px 0px 2px #7633fa;
+}
+.filter button.active {
+  color: #fff;
+  border-color: #7633fa;
+  background: #7633fa;
+}
+.filter .slider {
+  margin-top: 12px;
+}
+.filter .slider .filter-info {
+  display: flex;
+  color: #464646;
+  font-size: 14px;
+  justify-content: space-between;
+}
+.filter .slider input {
+  width: 100%;
+  height: 5px;
+  accent-color: #7633fa;
+  transition: 0.2s;
+}
+.filter .slider input:hover {
+  box-shadow: 0px 0px 15px #7633fa;
+  transform: scale(1.04);
+  transition: 0.2s;
+}
+.editor-panel .rotate {
+  margin-top: 17px;
+}
+.editor-panel .rotate button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24%;
+}
+.rotate .options button:nth-child(3),
+.rotate .options button:nth-child(4) {
+  font-size: 18px;
+}
+.rotate .options button:active {
+  color: #fff;
+  background: #7633fa;
+  border-color: #7633fa;
+}
+.wrapper .preview-img {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-left: 20px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-img img {
+  max-width: 490px;
+  max-height: 405px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.color-filters {
+  display: flex;
+  vertical-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.color-filters div {
+  width: 24%;
+  text-align: center;
+  padding: 0.5rem 0rem;
+}
+.filter-controls button {
+  padding: 11px 20px;
+  font-size: 14px;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+.filter-controls .reset-filter {
+  color: #6c757d;
+  border: 1px solid #6c757d;
+}
+.filter-controls .reset-filter:hover {
+  color: #fff;
+  background: #6c757d;
+}
+.filter-controls .choose-img {
+  background: rgb(52, 163, 52);
+  border: 1px solid #6c757d;
+}
+.filter-controls .save-img {
+  margin-left: 5px;
+  background: #7633fa;
+  border: 1px solid #7633fa;
+}
+
+@media screen and (max-width: 760px) {
+  .editor-container {
+    padding: 25px;
+  }
+  .editor-container .wrapper {
+    flex-wrap: wrap-reverse;
+  }
+  .wrapper .editor-panel {
+    width: 100%;
+  }
+  .wrapper .preview-img {
+    width: 100%;
+    margin: 0 0 15px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .filter-controls button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .filter-controls .filter-row {
+    width: 100%;
+  }
+  .filter-controls .filter-row .save-img {
+    margin-left: 0px;
+  }
+}
